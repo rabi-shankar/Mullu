@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@android:color/black"
+    tools:context=".activity.CardActivity">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardCornerRadius="8dp"
+        android:elevation="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/background"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/rest_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:visibility="gone"/>
+
+            <ImageView
+                android:id="@+id/arrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_round_south_24"
+                android:layout_above="@id/rotation_view"
+                android:layout_centerHorizontal="true"/>
+
+            <LinearLayout
+                android:id="@+id/rotation_view"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:padding="2dp"
+                android:layout_centerInParent="true"
+                android:background="@null">
+
+                <ImageView
+                    android:id="@+id/start_rotation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/mullu_spinning_wheel"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/msg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:text="Spin the wheel and get your Card"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:textSize="20sp"
+                android:textColor="@android:color/white"
+                android:layout_marginTop="8dp"
+                android:layout_below="@id/rotation_view"/>
+
+            <TextView
+                android:id="@+id/try_again"
+                android:layout_width="172dp"
+                android:layout_height="wrap_content"
+                android:drawablePadding="8dp"
+                android:paddingStart="16dp"
+                android:paddingTop="12dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="10dp"
+                android:text="spin again"
+                android:gravity="center_vertical"
+                android:textAllCaps="true"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"
+                android:visibility="invisible"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/background_rounding"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_alignParentEnd="true"
+                app:drawableStartCompat="@drawable/ic_round_play_circle_outline_24" />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
